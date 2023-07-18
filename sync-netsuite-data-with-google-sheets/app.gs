@@ -51,7 +51,7 @@ function getDataAndAddToSheet(restLetFunction, sheetToUpdate){
   // console.log("in " + restLetFunction)
   // console.log(accessToken)
   //Fetch Netsuite
-  let data = UrlFetchApp.fetch(`https://3496142.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1984&deploy=1&query=${restLetFunction}`, {method: "get", headers: headers}).getContentText()
+  let data = UrlFetchApp.fetch(`https://${global.netsuiteAccountId}.restlets.api.netsuite.com/app/site/hosting/restlet.nl?script=1984&deploy=1&query=${restLetFunction}`, {method: "get", headers: headers}).getContentText()
   // console.log("data",data)
   //clear the current data in the sheet
   let spreadSheet = SpreadsheetApp.getActiveSpreadsheet()
